@@ -1,6 +1,6 @@
-# markdown-code-snippet-runner
+# VSCode Markdown Code Snippet Runner Extension
 
-![Demo GIF](/docs/assets/demo.gif)
+![Demo GIF](https://github.com/jackbilestech/vscode-markdown-code-snippet-runner/docs/assets/demo.gif)
 
 ## Features
 

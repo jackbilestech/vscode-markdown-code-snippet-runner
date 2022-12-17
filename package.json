@@ -1,8 +1,8 @@
 {
   "name": "markdown-code-snippet-runner",
-  "displayName": "Markdown Code Terminal Executor",
+  "displayName": "Markdown Code Snippet Runner",
   "description": "Run single quote code sippets in markdown",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "jackbilestech",
   "license": "MIT",
   "engines": {

@@ -5,6 +5,9 @@ on:
         description: "A tag to deploy to production"
         type: string
         required: true
+  release:
+    types: [published]
+
 jobs:
   publish:
     strategy:
