@@ -3,25 +3,15 @@ on:
     branches:
     - main
 jobs:
-  publish:
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+  tag:
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Install Node.js
-      uses: actions/setup-node@v3
+    - name: get-npm-version
+      id: package-version
+      uses: martinbeentjes/npm-get-version-action@main
+    - uses: rickstaa/action-create-tag@v1
       with:
-        node-version: 16.x
-    - run: npm install
-    - run: xvfb-run -a npm test
-      if: runner.os == 'Linux'
-    - run: npm test
-      if: runner.os != 'Linux'
-    - name: Publish
-      if: success() && matrix.os == 'ubuntu-latest'
-      run: npm run deploy
-      env:
-        VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        tag: ${{ steps.package-version.outputs.current-version}}
+        message: "Latest release"
