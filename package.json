@@ -15,7 +15,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "onLanguage:markdown"
   ],
   "icon": "assets/icon.png",
   "keywords": [
