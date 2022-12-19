@@ -1,0 +1,30 @@
+on:
+  pull_request:
+    branches:    
+      - main
+    paths-ignore:
+      - '.github/**'
+jobs:
+  semver-compare:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout current
+      id: head
+      uses: actions/checkout@v3
+    - name: Get Version
+      id: head-package-version
+      uses: martinbeentjes/npm-get-version-action@main
+    - name: Checkout main
+      uses: actions/checkout@v3
+      id: base
+      with:
+        ref: 'main'
+    - name: Get Version
+      id: base-package-version
+      uses: martinbeentjes/npm-get-version-action@main
+    # check package verison is greater than main
+    - uses: jackbilestech/semver-compare@1.0.4
+      with:
+        head: ${{ steps.head-package-version.outputs.current-version}}
+        base: ${{ steps.base-package-version.outputs.current-version}}
+        operator: '>'
