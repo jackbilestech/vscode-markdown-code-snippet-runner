@@ -2,6 +2,8 @@ on:
   push:
     branches:
     - main
+    - '!.github'
+
 jobs:
   tag:
     runs-on: ubuntu-latest
