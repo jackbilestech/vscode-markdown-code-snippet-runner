@@ -2,6 +2,7 @@ on:
   pull_request:
     branches:    
       - main
+      - '!.github'
 jobs:
   semver-compare:
     runs-on: ubuntu-latest
