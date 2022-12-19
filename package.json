@@ -2,7 +2,7 @@
   "name": "markdown-code-snippet-runner",
   "displayName": "Markdown Code Snippet Runner",
   "description": "Run single quote code sippets in markdown",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "publisher": "jackbilestech",
   "license": "MIT",
   "engines": {
