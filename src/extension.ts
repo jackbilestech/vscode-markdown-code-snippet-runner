@@ -15,7 +15,7 @@ function initFromConfig(context: vscode.ExtensionContext): void {
 	vscode.languages.registerDocumentLinkProvider(
 		'*',
 		new LinkDefinitionProvider(
-			'`{1}[^`].*?`{1}[^`]',
+			'`{1}[^`].*?`{1}',
 			'',
 			''
 		)
